@@ -15,7 +15,7 @@
     --color3:#026773;
     --color4:#3CA6A6;
     --color5:#F2E3D5;
-    --color0:#202020;
+    --color0:#090b0e;
     --color6: #eee;
     --textshadow: 2px 3px 10px #000;
 }
@@ -77,20 +77,21 @@ button{
     border-radius: 30px;
     border: none;
     outline: none;
-    background-image: linear-gradient(to left, var(--color4), var(--color1) );
+    background-color: var(--color2);
     color: var(--color6);
-
+    
 }
 
 .header .bar-navigation button:hover{
-    background-image: linear-gradient(to left, var(--color1), var(--color4) );
+    background-color: var(--color3);
     color: var(--color6);
-    opacity: 0.85;
+    opacity: 1;
+    transition: background-color 0.5s;
 }
 
-.header .bar-navigation button:active{
-    opacity: 1;
-    transform: scaleY(1px);
+.header .bar-navigation button:active, .main-button:active{
+    opacity: 0.8;
+    transform: translateY(1px);
 }
 
 /*CONTAINER -1*/
@@ -102,7 +103,7 @@ button{
     position: relative;
     max-width: 100%;
     margin: auto;
-    position: absolute;
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -118,12 +119,24 @@ button{
 }
 
 
-.firt-container img{
+.firt-container #img-chess{
     width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    filter: brightness(30%);
+    filter: brightness(60%);
+
+}
+
+.firt-container .masc-gradient{
+    background-image: linear-gradient( to top, var(--color0), transparent);
+    width: 100%;
+    height: 50%;
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 
@@ -132,6 +145,7 @@ button{
     top: 37%;
     left: 10%;
     max-width: 600px;
+    z-index: 10;
 }
 
 .firt-container .firt-content .firt-content-box{
@@ -155,21 +169,130 @@ button{
 }
 
 
-.firt-container .firt-content .firt-content-box button{
+.firt-container .firt-content .firt-content-box .main-button{
     width: 170px;
     height: 50px;
     border-radius: 10px;
     border: none;
     outline: none;
-    background-image: linear-gradient(to left, var(--color1), var(--color4) );
+    background-color: var(--color1);
     font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 2px;
     color: var(--color6);
     text-shadow: var(--textshadow);
-    transition: background-image 6s linear;
+}
+.firt-content-box .main-button:hover{
+    background-color: var(--color3);
+    color: var(--color6);
+    opacity: 1;
+    transition: background-color 0.5s;
 }
 
-.firt-container .firt-content .firt-content-box button:hover{
-    background-image: linear-gradient(to left, var(--color4), var(--color1));
+
+
+/*container
+*/
+
+.second-container{
+    width: 100vw;
+    height: 100vh;
+
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 70px;
+
+}
+
+.second-container .second-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.second-container .second-content .content-special{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+
+}
+
+
+.second-container .second-content .content-special .box-text-special{
+    color: var(--color6);
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 30px;
+    text-shadow: var(--textshadow);
+}
+
+.second-container .second-content .content-special .box-text-special h2{
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+
+} 
+.box-text-special h2 span{
+    color: var(--color4);
+
+}
+
+.box-text-special p{
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 26px;
+    color: #eeeeee9a;
+}
+
+.second-container .second-content .content-special .box-text-special h4{
+    font-size: 1.1rem ;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin: auto;
+}
+.box-text-special h4 span{
+    color: var(--color4);
+
+}
+
+.content-special .box-text-special .special-button{
+    width: 300px;
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: var(--color3);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--color6);
+    text-shadow: var(--textshadow);
+    text-transform: uppercase;
+    margin: auto;
+}
+
+.second-container .second-content .box-cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: auto;
+    max-width: 1200px;
+    margin-top: 40px;
+    gap: 60px;
+}
+
+.second-container .second-content .box-cards .card{
+    background-color: #00000057;
+    filter: blur(20%);
+    padding: 60px 60px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    color: var(--color6);
 }
